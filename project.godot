@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="echonights"
-run/main_scene="uid://bv3rxl15k7bj6"
+run/main_scene="uid://4vbfhvr2gpgd"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [editor_plugins]
 
