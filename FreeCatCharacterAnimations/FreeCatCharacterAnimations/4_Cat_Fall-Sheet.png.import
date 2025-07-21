@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bka0nnqrk540m"
-path="res://.godot/imported/bricktile=left.png-10dbc3008421096cdb62abb773d5f513.ctex"
+uid="uid://c0gdrareq1tfo"
+path="res://.godot/imported/4_Cat_Fall-Sheet.png-6e2a4cd06fc6c6a1297434968a3726fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bricktile=left.png"
-dest_files=["res://.godot/imported/bricktile=left.png-10dbc3008421096cdb62abb773d5f513.ctex"]
+source_file="res://FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png"
+dest_files=["res://.godot/imported/4_Cat_Fall-Sheet.png-6e2a4cd06fc6c6a1297434968a3726fc.ctex"]
 
 [params]
 

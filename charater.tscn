@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://su56pwdga6ul"]
+
+[ext_resource type="Script" uid="uid://cj2pm5taqhyuw" path="res://character_body_2d.gd" id="1_fxnej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb1ct"]
+size = Vector2(26.5, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kk55n"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_kk55n"]
+resource_name = "jump"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxnej"]
+_data = {
+&"jump": SubResource("Animation_kk55n")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+modulate = Color(0.478431, 1, 1, 1)
+script = ExtResource("1_fxnej")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, 1)
+limit_left = 0
+limit_top = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.75, 9)
+shape = SubResource("RectangleShape2D_yb1ct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kk55n")
+animation = &"falling"
+frame_progress = 0.732956
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fxnej")
+}
