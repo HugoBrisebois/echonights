@@ -1791,7 +1791,7 @@ sources/0 = SubResource("TileSetAtlasSource_ehuit")
 [node name="tutorial" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_ehuit")]
-position = Vector2(103, 295)
+position = Vector2(33, 221)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(524, -30)

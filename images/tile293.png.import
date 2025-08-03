@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjtjde65hlgov"
-path="res://.godot/imported/cat jump1.png-eee8d5f3c41c8521cc5d835712d7d022.ctex"
+uid="uid://b7j3mne18hcib"
+path="res://.godot/imported/tile293.png-f663dc4034f14c7bd3937a6424250daf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://jump anamtion/cat jump1.png"
-dest_files=["res://.godot/imported/cat jump1.png-eee8d5f3c41c8521cc5d835712d7d022.ctex"]
+source_file="res://images/tile293.png"
+dest_files=["res://.godot/imported/tile293.png-f663dc4034f14c7bd3937a6424250daf.ctex"]
 
 [params]
 
