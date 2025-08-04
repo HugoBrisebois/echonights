@@ -52,11 +52,6 @@ layout_mode = 2
 text = "Play"
 script = ExtResource("2_7vrkn")
 
-[node name="tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "tutorial"
-script = ExtResource("2_7vrkn")
-
 [node name="options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "options"
@@ -69,6 +64,5 @@ text = "Quit
 script = ExtResource("2_7vrkn")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
