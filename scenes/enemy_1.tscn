@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmmk4h6t72reb"]
 
-[ext_resource type="Texture2D" uid="uid://b0e7pnw1fnnjc" path="res://images/icon.jpg" id="1_mbxyh"]
-[ext_resource type="Script" uid="uid://bc7b5lt477l1q" path="res://enemy_1.gd" id="1_pjquw"]
+[ext_resource type="Script" uid="uid://bc7b5lt477l1q" path="res://scripts/enemy_1.gd" id="1_a1412"]
+[ext_resource type="Texture2D" uid="uid://b0e7pnw1fnnjc" path="res://images/icon.jpg" id="2_ejytf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjquw"]
 size = Vector2(28, 32)
@@ -11,12 +11,12 @@ size = Vector2(26, 30)
 
 [node name="enemy" type="CharacterBody2D"]
 position = Vector2(-3, -1)
-script = ExtResource("1_pjquw")
+script = ExtResource("1_a1412")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(20, 16.25)
 scale = Vector2(0.0507812, 0.0576173)
-texture = ExtResource("1_mbxyh")
+texture = ExtResource("2_ejytf")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
@@ -29,3 +29,9 @@ shape = SubResource("RectangleShape2D_pjquw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 16)
 shape = SubResource("RectangleShape2D_663o1")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 10.0
+offset_top = -26.0
+offset_right = 29.0
+offset_bottom = 1.0

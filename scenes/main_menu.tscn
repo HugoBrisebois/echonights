@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://4vbfhvr2gpgd"]
+
+[ext_resource type="Script" uid="uid://c51vphjx1glas" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://caljbytbjo6y8" path="res://images/cooltext488097145126714.png" id="2_wu84c"]
+[ext_resource type="Script" uid="uid://q7woetmig5ay" path="res://scripts/gamepad.gd" id="3_8ln24"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -577.0
+offset_top = -321.0
+offset_right = 574.0
+offset_bottom = 322.0
+color = Color(0.251688, 0.258194, 0.248481, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -101.0
+offset_right = 167.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wu84c")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = 15.5
+offset_right = -79.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 1"
+script = ExtResource("3_8ln24")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = 15.5
+offset_right = 290.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 2"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

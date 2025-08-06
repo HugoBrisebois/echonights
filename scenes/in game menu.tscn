@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccglsiscwbnlf"]
 
-[ext_resource type="Script" uid="uid://cn3c3jkg6pa1y" path="res://ingamemune.gd" id="1_x8uyx"]
-[ext_resource type="Script" uid="uid://q7woetmig5ay" path="res://gamepad.gd" id="2_t4h1m"]
+[ext_resource type="Script" uid="uid://cn3c3jkg6pa1y" path="res://scripts/ingamemune.gd" id="1_0wvmm"]
+[ext_resource type="Script" uid="uid://q7woetmig5ay" path="res://scripts/gamepad.gd" id="2_uw7u8"]
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -15,7 +15,7 @@ offset_right = 4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_x8uyx")
+script = ExtResource("1_0wvmm")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -31,7 +31,7 @@ offset_top = 279.0
 offset_right = 673.0
 offset_bottom = 358.0
 text = "resume"
-script = ExtResource("2_t4h1m")
+script = ExtResource("2_uw7u8")
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
@@ -41,7 +41,7 @@ offset_right = 677.0
 offset_bottom = 454.0
 text = "quit
 "
-script = ExtResource("2_t4h1m")
+script = ExtResource("2_uw7u8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
