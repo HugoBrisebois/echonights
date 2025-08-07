@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=4 uid="uid://bv1crga6hwt8n"]
+[gd_scene load_steps=13 format=4 uid="uid://bv1crga6hwt8n"]
 
 [ext_resource type="Texture2D" uid="uid://ci85npio5ve88" path="res://images/Dungeon Tile Set.png" id="1_3hls8"]
-[ext_resource type="PackedScene" uid="uid://su56pwdga6ul" path="res://scenes/character.tscn" id="2_hbghi"]
-[ext_resource type="PackedScene" uid="uid://dbvryybnd34m" path="res://scenes/gem.tscn" id="2_rus8k"]
-[ext_resource type="PackedScene" uid="uid://bs0tc1fp2g1gt" path="res://scenes/key.tscn" id="3_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://4vbfhvr2gpgd" path="res://scenes/main_menu.tscn" id="3_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://su56pwdga6ul" path="res://scenes/game assets/character.tscn" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://dbvryybnd34m" path="res://scenes/game assets/gem.tscn" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://bs0tc1fp2g1gt" path="res://scenes/game assets/key.tscn" id="3_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://6hlbb44prn37" path="res://scenes/level_2.tscn" id="3_pa8r4"]
 [ext_resource type="Script" uid="uid://t7fgg35c4oc2" path="res://scripts/gamemanager.gd" id="5_4nkto"]
+[ext_resource type="Texture2D" uid="uid://dmkdo0ftgm6og" path="res://images/iconsx2.png" id="7_e3sih"]
+[ext_resource type="AudioStream" uid="uid://ch22sbw1yajc4" path="res://darkertides.wav" id="7_pa8r4"]
+[ext_resource type="Script" uid="uid://c0w0p6r04ukj6" path="res://scenes/pause_menu.gd" id="8_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://bmmk4h6t72reb" path="res://scenes/game assets/enemy_1.tscn" id="9_2y5yt"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_014kd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa8r4"]
 texture = ExtResource("1_3hls8")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -173,7 +177,7 @@ texture = ExtResource("1_3hls8")
 
 [sub_resource type="TileSet" id="TileSet_bswci"]
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_014kd")
+sources/2 = SubResource("TileSetAtlasSource_pa8r4")
 
 [node name="level_1" type="Node2D"]
 
@@ -183,7 +187,7 @@ tile_set = SubResource("TileSet_bswci")
 
 [node name="gem" parent="." instance=ExtResource("2_rus8k")]
 position = Vector2(3106, 289)
-target_level = ExtResource("3_fcfvj")
+target_level = ExtResource("3_pa8r4")
 
 [node name="Keys" type="Node" parent="."]
 
@@ -235,9 +239,10 @@ position = Vector2(3287, 402)
 [node name="player" parent="." instance=ExtResource("2_hbghi")]
 position = Vector2(26, 304)
 
-[node name="gamemanager" type="Node" parent="."]
+[node name="gamemanager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("5_4nkto")
+hearts = [NodePath("../ui/hearts/BoxContainer/heart"), NodePath("../ui/hearts/BoxContainer/heart2"), NodePath("../ui/hearts/BoxContainer/heart3")]
 
 [node name="ui" type="CanvasLayer" parent="."]
 
@@ -256,3 +261,113 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "points: 0"
+
+[node name="hearts" type="Panel" parent="ui"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -154.0
+offset_top = 12.0
+offset_right = -13.0
+offset_bottom = 52.0
+grow_horizontal = 0
+
+[node name="BoxContainer" type="BoxContainer" parent="ui/hearts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -16.5
+offset_right = 53.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="heart" type="TextureRect" parent="ui/hearts/BoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_e3sih")
+
+[node name="heart2" type="TextureRect" parent="ui/hearts/BoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_e3sih")
+
+[node name="heart3" type="TextureRect" parent="ui/hearts/BoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_e3sih")
+
+[node name="pause menu" type="Node" parent="ui"]
+script = ExtResource("8_2y5yt")
+
+[node name="pausepanel" type="Panel" parent="ui/pause menu"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/pause menu/pausepanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -5.0
+offset_right = 221.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="ui/pause menu/pausepanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Resume"
+
+[node name="quit" type="Button" parent="ui/pause menu/pausepanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="ui/pause menu/pausepanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 163.0
+offset_right = 20.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pa8r4")
+autoplay = true
+mix_target = 1
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="enemy" parent="enemies" instance=ExtResource("9_2y5yt")]
+position = Vector2(544, 548)
+
+[node name="enemy2" parent="enemies" instance=ExtResource("9_2y5yt")]
+position = Vector2(1040, 544)
+
+[node name="enemy3" parent="enemies" instance=ExtResource("9_2y5yt")]
+position = Vector2(1491, 548)
+
+[connection signal="pressed" from="ui/pause menu/pausepanel/VBoxContainer/resume" to="ui/pause menu" method="_on_resume_pressed"]
+[connection signal="pressed" from="ui/pause menu/pausepanel/VBoxContainer/quit" to="ui/pause menu" method="_on_quit_pressed"]

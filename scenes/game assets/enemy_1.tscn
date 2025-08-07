@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmmk4h6t72reb"]
+
+[ext_resource type="Texture2D" uid="uid://btwumqg2sjafq" path="res://GreenSlime/GreenSlimeIdle2-Sheet.png" id="2_a1412"]
+[ext_resource type="Script" uid="uid://bul2gjvgm82kl" path="res://scenes/game assets/enemy.gd" id="3_igtv8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejytf"]
+atlas = ExtResource("2_a1412")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq62l"]
+atlas = ExtResource("2_a1412")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3026"]
+atlas = ExtResource("2_a1412")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l21ug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejytf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq62l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3026")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1412"]
+radius = 14.0357
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_slpsx"]
+radius = 16.0312
+
+[node name="enemy" type="RigidBody2D"]
+position = Vector2(-3, -1)
+script = ExtResource("3_igtv8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(20.5, 16)
+scale = Vector2(1.5625, 1.625)
+sprite_frames = SubResource("SpriteFrames_l21ug")
+frame_progress = 0.444735
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 17)
+shape = SubResource("CircleShape2D_a1412")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21, 17)
+shape = SubResource("CircleShape2D_slpsx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

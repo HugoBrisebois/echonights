@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://4vbfhvr2gpgd"]
+[gd_scene load_steps=5 format=3 uid="uid://4vbfhvr2gpgd"]
 
 [ext_resource type="Script" uid="uid://c51vphjx1glas" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://caljbytbjo6y8" path="res://images/cooltext488097145126714.png" id="2_wu84c"]
 [ext_resource type="Script" uid="uid://q7woetmig5ay" path="res://scripts/gamepad.gd" id="3_8ln24"]
+[ext_resource type="AudioStream" uid="uid://dmxtv2ugnpxun" path="res://mainmenu.mp3" id="4_wu84c"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -68,6 +69,10 @@ offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 2"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wu84c")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
