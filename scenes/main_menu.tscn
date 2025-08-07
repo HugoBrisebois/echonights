@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c51vphjx1glas" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://caljbytbjo6y8" path="res://images/cooltext488097145126714.png" id="2_wu84c"]
 [ext_resource type="Script" uid="uid://q7woetmig5ay" path="res://scripts/gamepad.gd" id="3_8ln24"]
-[ext_resource type="AudioStream" uid="uid://dmxtv2ugnpxun" path="res://mainmenu.mp3" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://dmxtv2ugnpxun" path="res://music/mainmenu.mp3" id="4_wu84c"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3

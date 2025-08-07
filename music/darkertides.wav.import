@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ch22sbw1yajc4"
-path="res://.godot/imported/darkertides.wav-3e89b99e82505e74ded972999594d4a1.sample"
+path="res://.godot/imported/darkertides.wav-704b95dd314426f3331effd7095106cc.sample"
 
 [deps]
 
-source_file="res://darkertides.wav"
-dest_files=["res://.godot/imported/darkertides.wav-3e89b99e82505e74ded972999594d4a1.sample"]
+source_file="res://music/darkertides.wav"
+dest_files=["res://.godot/imported/darkertides.wav-704b95dd314426f3331effd7095106cc.sample"]
 
 [params]
 
