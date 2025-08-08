@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bs0tc1fp2g1gt" path="res://scenes/game assets/key.tscn" id="2_wps6d"]
 [ext_resource type="PackedScene" uid="uid://su56pwdga6ul" path="res://scenes/game assets/character.tscn" id="3_2hef4"]
 [ext_resource type="PackedScene" uid="uid://dbvryybnd34m" path="res://scenes/game assets/gem.tscn" id="4_lk3oq"]
-[ext_resource type="PackedScene" uid="uid://4vbfhvr2gpgd" path="res://scenes/main_menu.tscn" id="5_hrd5w"]
+[ext_resource type="PackedScene" uid="uid://dvq0x7w8d4ix6" path="res://scenes/level_7.tscn" id="5_abjnl"]
 [ext_resource type="Script" uid="uid://t7fgg35c4oc2" path="res://scripts/gamemanager.gd" id="6_5fwrv"]
 [ext_resource type="Texture2D" uid="uid://dmkdo0ftgm6og" path="res://images/iconsx2.png" id="7_e3utc"]
 [ext_resource type="Script" uid="uid://c0w0p6r04ukj6" path="res://scripts/pause_menu.gd" id="8_ymwnx"]
@@ -251,7 +251,7 @@ position = Vector2(19, 497)
 
 [node name="gem" parent="." instance=ExtResource("4_lk3oq")]
 position = Vector2(3307, 499)
-target_level = ExtResource("5_hrd5w")
+target_level = ExtResource("5_abjnl")
 
 [node name="gamemanager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
