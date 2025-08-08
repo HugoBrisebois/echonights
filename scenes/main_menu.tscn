@@ -39,40 +39,104 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wu84c")
 
-[node name="Button" type="Button" parent="."]
+[node name="level1" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -299.0
+offset_left = -342.0
 offset_top = 15.5
-offset_right = -79.0
+offset_right = -122.0
 offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 1"
 script = ExtResource("3_8ln24")
 
-[node name="Button2" type="Button" parent="."]
+[node name="level2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 70.0
+offset_left = -93.0
 offset_top = 15.5
-offset_right = 290.0
+offset_right = 127.0
 offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 2"
 
+[node name="level3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 151.0
+offset_top = 15.5
+offset_right = 371.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 3"
+
+[node name="level4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = 83.5
+offset_right = -123.0
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 4"
+
+[node name="level5" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 83.5
+offset_right = 128.0
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 5"
+
+[node name="level6" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 83.5
+offset_right = 370.0
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 6"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wu84c")
 autoplay = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="level1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="level3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="level4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="level5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="level6" to="." method="_on_button_6_pressed"]

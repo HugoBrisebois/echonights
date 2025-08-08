@@ -1,19 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmmk4h6t72reb"]
+[gd_scene load_steps=8 format=3 uid="uid://di5fohp5sce8e"]
 
-[ext_resource type="Texture2D" uid="uid://btwumqg2sjafq" path="res://GreenSlime/GreenSlimeIdle2-Sheet.png" id="2_a1412"]
-[ext_resource type="Script" uid="uid://bul2gjvgm82kl" path="res://scenes/game assets/enemy.gd" id="3_igtv8"]
-[ext_resource type="AudioStream" uid="uid://dcli2kkkhjybf" path="res://music/slime-impact-352473.mp3" id="3_yi6p0"]
+[ext_resource type="Texture2D" uid="uid://btwumqg2sjafq" path="res://GreenSlime/GreenSlimeIdle2-Sheet.png" id="2_udasv"]
+
+[sub_resource type="GDScript" id="GDScript_bcfuq"]
+script/source = "extends Node2D
+
+const SPEED = 60
+
+var direction = 1
+
+@onready var ray_castleft: RayCast2D = %RayCastleft2
+@onready var ray_castright: RayCast2D = %RayCastright
+
+func _proccess(delta):
+	if ray_castleft.is_colliding():
+		print(\"colliding\")
+	
+	position.x += direction * SPEED * delta
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejytf"]
-atlas = ExtResource("2_a1412")
+atlas = ExtResource("2_udasv")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dq62l"]
-atlas = ExtResource("2_a1412")
+atlas = ExtResource("2_udasv")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3026"]
-atlas = ExtResource("2_a1412")
+atlas = ExtResource("2_udasv")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l21ug"]
@@ -33,15 +48,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a1412"]
-radius = 14.0357
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_slpsx"]
 radius = 16.0312
 
-[node name="enemy" type="RigidBody2D"]
+[node name="movingenemy" type="Node2D"]
 position = Vector2(-3, -1)
-script = ExtResource("3_igtv8")
+script = SubResource("GDScript_bcfuq")
 
 [node name="enemy_animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -50,20 +62,20 @@ scale = Vector2(1.5625, 1.625)
 sprite_frames = SubResource("SpriteFrames_l21ug")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(21, 17)
-shape = SubResource("CircleShape2D_a1412")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(21, 17)
 shape = SubResource("CircleShape2D_slpsx")
 
-[node name="sfx_death" type="AudioStreamPlayer" parent="."]
+[node name="RayCastleft2" type="RayCast2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("3_yi6p0")
-mix_target = 1
-playback_type = 1
+position = Vector2(21, 17)
+target_position = Vector2(-21, 0)
+
+[node name="RayCastright" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(21, 17)
+target_position = Vector2(21, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

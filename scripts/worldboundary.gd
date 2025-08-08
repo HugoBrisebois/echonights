@@ -8,6 +8,5 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	if (body.name == "player"):
-		print("player died!")
 		get_tree().reload_current_scene()
 	
