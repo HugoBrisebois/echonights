@@ -130,6 +130,36 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Level 6"
 
+[node name="level7" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = 144.5
+offset_right = 1.0
+offset_bottom = 195.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 7"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 148.5
+offset_right = 250.0
+offset_bottom = 199.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wu84c")
 autoplay = true
@@ -140,3 +170,5 @@ autoplay = true
 [connection signal="pressed" from="level4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="level5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="level6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

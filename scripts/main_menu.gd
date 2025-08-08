@@ -25,3 +25,11 @@ func _on_button_5_pressed() -> void:
 
 func _on_button_6_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_6.tscn")
+
+
+func _on_level_7_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_7.tscn")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

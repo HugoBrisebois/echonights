@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bmmk4h6t72reb" path="res://scenes/game assets/enemy_1.tscn" id="10_j7y2l"]
 [ext_resource type="Script" uid="uid://bhlplxnmbek7i" path="res://scripts/worldboundary.gd" id="11_epfji"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_83tf8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abjnl"]
 texture = ExtResource("1_abjnl")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -178,7 +178,7 @@ texture = ExtResource("1_abjnl")
 
 [sub_resource type="TileSet" id="TileSet_enqdf"]
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_83tf8")
+sources/2 = SubResource("TileSetAtlasSource_abjnl")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lgfmy"]
 distance = -165.0
